@@ -1,0 +1,377 @@
+.abilities {
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+.dark-muted {
+    height: 100vh;
+    width: 510px;
+    height: 510px;
+    border-radius: 50%;
+    border: 3px solid $dark-muted;
+}
+.dark-muted1 {
+    width: 580px;
+    height: 580px;
+    border-radius: 50%;
+    border: 3px solid $dark-muted1;
+}
+.dark-muted2 {
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    border: 2px solid $dark-muted2;
+}
+.card {
+    top: 0;
+    left: -50%;
+}
+.abCard {
+    top: -20%;
+    left: -80%;
+}
+.abCard1 {
+    top: -20%;
+    left: 80%;
+}
+.abCard2 {
+    bottom: -20%;
+    left: -80%;
+}
+.abCard3 {
+    bottom: -20%;
+    left: 80%;
+}
+.abCard, .abCard1, .abCard2, .abCard3 {
+    position: absolute;
+    width: 480px;
+    height: 270px;
+    border-radius: 28px;
+    background-color: $pale-brown-opacity;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.abCard-title {
+    margin-bottom: 45px;
+}
+.card-title1 {
+    max-width: 330px;
+    font-size: 21px;
+}
+.abCard-index {
+    color: $main-brown;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.216);
+}
+.abCard-text {
+    font-size: 18px;
+    color: $main-color;
+}
+@media(max-width: 1440px) {
+    .dark-muted {
+        width: 440px;
+        height: 440px;
+    }
+    .dark-muted1 {
+        width: 510px;
+        height: 510px;
+    }
+    .dark-muted2 {
+        width: 580px;
+        height: 580px;
+    }
+    .abCard, .abCard1, .abCard2, .abCard3 {
+        width: 450px;
+        height: 240px;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .card-title1 {
+        max-width: 250px;
+        font-size: 19px;
+    }
+    .abCard-title {
+        margin-bottom: 20px;
+    }
+    .abCard-text {
+        font-size: 16px;
+        color: $main-color;
+    }
+    .abCard {
+        top: -20%;
+        left: -83%;
+    }
+    .abCard2 {
+        bottom: -20%;
+        left: -83%;
+    }
+}
+@media(max-width: 1294px) {
+    .dark-muted {
+        width: 380px;
+        height: 380px;
+    }
+    .dark-muted1 {
+        width: 450px;
+        height: 450px;
+    }
+    .dark-muted2 {
+        width: 520px;
+        height: 520px;
+    }
+    .abCard, .abCard1, .abCard2, .abCard3 {
+        width: 400px;
+        height: 210px;
+    }
+    .card-title1 {
+        max-width: 250px;
+        font-size: 18px;
+    }
+    .abCard-title {
+        margin-bottom: 10px;
+    }
+    .abCard-text {
+        font-size: 14px;
+        color: $main-color;
+    }
+    .abCard {
+        top: -20%;
+        left: -80%;
+    }
+    .abCard2 {
+        bottom: -20%;
+        left: -80%;
+    }
+    .abCard1 {
+        top: -20%;
+        left: 75%;
+    }
+    .abCard3 {
+        bottom: -20%;
+        left: 75%;
+    }
+}
+@media(max-width: 1025px) {
+    .abCard {
+        top: -20%;
+        left: -70%;
+    }
+    .abCard2 {
+        bottom: -20%;
+        left: -70%;
+    }
+    .abCard1 {
+        top: -20%;
+        left: 65%;
+    }
+    .abCard3 {
+        bottom: -20%;
+        left: 65%;
+    }
+}
+@media(max-width: 957px) {
+    .dark-muted {
+        width: 300px;
+        height: 300px;
+    }
+    .dark-muted1 {
+        width: 370px;
+        height: 370px;
+    }
+    .dark-muted2 {
+        width: 440px;
+        height: 440px;
+    }
+    .abCard, .abCard1, .abCard2, .abCard3 {
+        width: 320px;
+        height: 205px;
+    }
+    .card-title1 {
+        max-width: 200px;
+        font-size: 15px;
+    }
+    .abCard-title {
+        margin-bottom: 8px;
+    }
+    .abCard-text {
+        font-size: 13px;
+        color: $main-color;
+    }
+
+    .abCard {
+        top: -30%;
+        left: -70%;
+    }
+    .abCard2 {
+        bottom: -30%;
+        left: -70%;
+    }
+    .abCard1 {
+        top: -30%;
+        left: 63%;
+    }
+    .abCard3 {
+        bottom: -30%;
+        left: 63%;
+    }
+
+}
+@media(max-width: 742px) {
+    .dark-muted {
+        width: 250px;
+        height: 250px;
+    }
+    .dark-muted1 {
+        width: 320px;
+        height: 320px;
+    }
+    .dark-muted2 {
+        width: 390px;
+        height: 390px;
+    }
+    .abCard, .abCard1, .abCard2, .abCard3 {
+        width: 310px;
+        height: 205px;
+    }
+    .card-title1 {
+        max-width: 200px;
+        font-size: 15px;
+    }
+    .abCard-title {
+        margin-bottom: 5px;
+    }
+    .abCard-text {
+        font-size: 13px;
+        color: $main-color;
+    }
+    .abCard {
+        top: -45%;
+        left: -87%;
+    }
+    .abCard2 {
+        bottom: -45%;
+        left: -87%;
+    }
+    .abCard1 {
+        top: -45%;
+        left: 63%;
+    }
+    .abCard3 {
+        bottom: -45%;
+        left: 63%;
+    }
+}
+@media(max-width: 717px) {
+    .abilities {
+        margin-top: 100px;
+}
+    .dark-muted {
+        border: 2px solid #fff;
+        width: 250px;
+        height: 250px;
+    }
+    .dark-muted1 {
+        display: none !important;
+        width: 320px;
+        height: 320px;
+    }
+    .dark-muted2 {
+        display: none !important;
+        width: 390px;
+        height: 390px;
+    }
+    .abCard, .abCard1, .abCard2, .abCard3 {
+        max-width: 310px;
+        height: 205px;
+    }
+    .card-title1 {
+        max-width: 200px;
+        font-size: 15px;
+    }
+    .abCard-title {
+        margin-bottom: 5px;
+    }
+    .abCard-text {
+        font-size: 13px;
+        color: $main-color;
+    }
+    .abCard {
+        top: -125%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .abCard2 {
+        bottom: -32.5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .abCard1 {
+        top: -38%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .abCard3 {
+        bottom: -120%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media(max-width: 321px) {
+    .abilities {
+        margin-bottom: 20px;
+}
+    .abCard, .abCard1, .abCard2, .abCard3 {
+        max-width: 280px;
+        height: 220px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 20px;
+        border-radius: 24px;
+    }
+    .abCard-index {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+    .card-title1 {
+        max-width: 180px;
+        font-size: 14.5px;
+    }
+    .abCard-title {
+        margin-bottom: 0px;
+    }
+    .abCard-text {
+        font-size: 13px;
+    }
+    .abCard {
+        top: -135%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .abCard2 {
+        bottom: -38.5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .abCard1 {
+        top: -43%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .abCard3 {
+        bottom: -130.5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
