@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('nav.nav')
-    <div class="main-div">
+    <div class="main-div" id="home">
         <div class="first-div first-div-container">
             <div class="home-content">
                 <div class="responsive-div">
@@ -170,9 +170,9 @@
                     <i class="bi bi-telephone-fill me-1"></i> 09 458 923 602
                 </div>
                 <a href="" class="info-text text-decoration-none">
-                    <i class="fa-solid fa-envelope me-1"></i> clarityfoster@gmail.com
+                    <i class="fa-solid fa-envelope"></i> clarityfoster@gmail.com
                 </a>
-                <a href="" class="info-text text-decoration-none">
+                <a href="https://github.com/clarityfoster" class="info-text text-decoration-none">
                     <i class="bi bi-github me-1"></i> clarityfoster
                 </a>
                 <a href="" class="info-text text-decoration-none">
@@ -182,12 +182,14 @@
         </div>
     </div>
     @include('admins/footer')
+    @include('admins/topBtn')
 @endsection
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const seeMore = document.getElementById('seeMore');
         const fullBody = document.getElementById('fullBody');
         const shortBody = document.getElementById('shortBody');
+        const topBtn = document.getElementById('topBtn');
 
         seeMore.addEventListener('click', function(event) {
             event.preventDefault();
@@ -199,6 +201,13 @@
                 fullBody.style.display = "block";
                 shortBody.style.display = "none";
                 seeMore.textContent = "See Less";
+            }
+        });
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 550) { 
+                topBtn.classList.add('topActive')
+            } else {
+                topBtn.classList.remove('topActive')
             }
         });
     });

@@ -1,11 +1,10 @@
-
-<footer id="footer">
+<footer class="mt-4" id="footer">
     <div class="footer-content">
         <div class="footer-logo">
             <h4>Clarity</h4>
         </div>
         <div class="footer-links">
-            <a href="{{ route('index') }}">Home</a>
+            <a href="{{ route('index') }}#home">Home</a>
             <a href="{{ route('index') }}#abilities">Abilities</a>
             <a href="{{ route('index') }}#projects">Projects</a>
             <a href="{{ route('index') }}#contact">Contact</a>
