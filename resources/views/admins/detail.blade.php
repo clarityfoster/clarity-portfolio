@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="detail-container">
-        @include('nav.nav')
-    </div>
-    <div class="detail-container1">
+<div class="detail-container1">
+    @include('nav.nav')
         <div class="detail-card d-flex flex-column align-items-center">
             <iframe class="youtube rounded-3" 
                 width="640" height="335" 

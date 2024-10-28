@@ -1,4 +1,7 @@
-<nav class="nav-bar">
+@php
+    $detailPage = Request::routeIs('detail');
+@endphp
+<nav class="nav-bar {{ $detailPage ? 'full' : '' }}">
     <a class="logo" href="{{ route('index') }}">Clarity</a>
     <div class="nav-menu">
         <a class="nav-items essence-nav" href="">
@@ -7,19 +10,19 @@
                 Essence
             </li>
         </a>
-        <a class="nav-items" href="">
+        <a class="nav-items" href="{{ route('index') }}#abilities">
             <li>
                 <span class="nav-icon"><i class="fa-solid fa-lightbulb me-2"></i></i></span>
                 Abilities
             </li>
         </a>
-        <a class="nav-items" href="">
+        <a class="nav-items" href="{{ route('index') }}#projects">
             <li>
                 <span class="nav-icon"><i class="fa-solid fa-clipboard-check me-2"></i></span>
                 Projects
             </li>
         </a>
-        <a class="nav-items" href="">
+        <a class="nav-items" href="{{ route('index') }}#contact">
             <li>
                 <span class="nav-icon"><i class="fa-solid fa-paper-plane me-2"></i></span>Contact
             </li>
@@ -32,11 +35,14 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const toggle = document.getElementById('toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        toggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-        console.log( toggle, navMenu)
-    })
+    const toggle = document.getElementById('toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navItems = document.querySelectorAll('.nav-items');
+
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        navMenu.classList.toggle('active');
+    });
+});
+
 </script>

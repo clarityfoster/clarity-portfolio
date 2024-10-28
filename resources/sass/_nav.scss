@@ -16,14 +16,26 @@
 .nav-items {
     font-size: 21px;
     color: $main-color;
+    transition: ease-in .3s;
+}
+.nav-items:hover {
+    color: $main-brown;
 }
 .nav-bar {
-    width: 100%;
+    position: fixed;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 100px;
     margin-top: 40px;
+    padding-left: 100px;
+    z-index: 1000;
+}
+.nav-bar.full {
+    width: 90%;
+    padding-left: 0;
+    top: 10px;
 }
 .nav-bar .nav-menu {
     display: flex;
@@ -42,6 +54,7 @@
     }
     .nav-bar {
         gap: 80px;
+        padding-left: 70px;
     }
     .nav-bar .nav-menu {
         gap: 60px;
@@ -59,6 +72,45 @@
     }
     .nav-bar .nav-menu {
         gap: 35px;
+    }
+}
+@media(max-width: 1205px) {
+    .nav-bar {
+        width: 40%;
+        padding-left: 55px;
+    }
+    #toggle {
+        display: block;
+    }
+    .nav-menu {
+        gap: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        position: absolute; 
+        top: -700%; 
+        left: 30%;
+        border: 2px solid $pale-brown;
+        width: 250px;
+        padding: 20px 10px;
+        border-radius: 20px;
+        backdrop-filter: blur(9px);
+        background-color: #e7d5bc1d;
+        transition: ease-in .7s;
+    }
+    .nav-menu.active {
+        top: 150%;
+        left: 30%; 
+        display: flex;
+    }
+    .nav-icon {
+        display: inline;
+    }
+    .nav-items {
+        font-size: 18px;
+        color: $main-brown;
+    }
+    .toggle {
+        display: block;
     }
 }
 @media(max-width: 1199px) {
@@ -84,60 +136,18 @@
         gap: 20px;
     }
 }
-@media(max-width: 1205px) {
-    #toggle {
-        display: block;
-    }
-    .nav-menu {
-        gap: 20px;
-        align-items: flex-start;
-        flex-direction: column;
-        position: absolute; 
-        top: -100%; 
-        left: 11%;
-        border: 2px solid $pale-brown;
-        width: 250px;
-        padding: 20px 10px;
-        border-radius: 20px;
-        backdrop-filter: blur(9px);
-        background-color: #e7d5bc1d;
-        transition: ease-in .7s;
-    }
-    .nav-menu.active {
-        top: 13%;
-        left: 11%; 
-        display: flex;
-    }
-    .nav-icon {
-        display: inline;
-    }
-    .nav-items {
-        font-size: 18px;
-        color: $main-brown;
-    }
-
-    .toggle {
-        display: block;
-    }
-}
-@media(max-width: 1385px) {
-    .nav-bar {
-        gap: 50px;
-    }
-}
-
-@media(max-width: 1440px) {
-    .nav-bar {
-        gap: 80px;
-    }
-}
 @media(max-width: 768px) {
+    .nav-bar {
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 100%;
+    }
     .nav-menu {
         gap: 20px;
         align-items: flex-start;
         flex-direction: column;
         position: absolute; 
-        top: -100%; 
+        top: -700%; 
         left: 50%;
         transform: translateX(-50%); 
         border: 2px solid $pale-brown;
@@ -150,7 +160,7 @@
     }
     .nav-menu.active { 
         left: 50%;
-        transform: translateX(-50%); 
+        transform: translateX(-50%);  
     }
     .essence-nav {
         display: block;

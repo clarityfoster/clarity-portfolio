@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    @include('nav.nav')
     <div class="main-div">
         <div class="first-div first-div-container">
-            @include('nav.nav')
             <div class="home-content">
                 <div class="responsive-div">
                     <img class="home-img-responsive" src="{{ asset('img/white.jpeg') }}" alt="Image">
@@ -88,7 +88,7 @@
             </div>
         </div>
     </div>
-    <div class="abilities d-flex align-items-center justify-content-center">
+    <div id="abilities" class="abilities d-flex align-items-center justify-content-center">
         <div class="dark-muted d-flex align-items-center justify-content-center position-relative">
             <div class="dark-muted1 d-flex align-items-center justify-content-center">
                 <div class="dark-muted2 d-flex align-items-center justify-content-center">
@@ -114,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div class="prjs">
+    <div class="prjs" id="projects">
         <div class="cat-div">
             @foreach ($category as $cat)
                 <a href="#" class="cat-title">{{ $cat->name }}</a>
@@ -132,7 +132,8 @@
                         <a href="{{ $prj->github_url }}" class="card-link text-decoration-none main-brown">
                             <i class="bi bi-github me-1"></i> Source code
                         </a>
-                        <a href="{{ route('detail', ['id' => $prj->id]) }}" class="card-link text-decoration-none main-brown">
+                        <a href="{{ route('detail', ['id' => $prj->id]) }}"
+                            class="card-link text-decoration-none main-brown">
                             See More <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>
@@ -140,6 +141,47 @@
             @endforeach
         </div>
     </div>
+    <div id="contact">
+        <h3 class="contact-title">Get In Touch</h3>
+        <div class="contact-body">
+            <form class="contact-form">
+                @csrf
+                <div class="input-field mb-4">
+                    <label for="name">Name</label>
+                    <input type="text" class="name" name="name" required>
+                </div>   
+                <div class="input-field mb-4">
+                    <label for="email">Email</label>
+                    <input type="text" class="name" name="email" required>
+                </div> 
+                <div class="input-field mb-4">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="name" required></textarea>
+                </div> 
+                <button type="submit" class="form-submit">
+                    Send Message <i class="fa-solid fa-paper-plane text-white ms-2"></i>
+                </button>
+            </form>
+            <div class="contact-info">
+                <div class="info-text">
+                    <i class="info-icon bi bi-geo-alt-fill me-1"></i> Yangon, Myanmar
+                </div>
+                <div class="info-text">
+                    <i class="bi bi-telephone-fill me-1"></i> 09 458 923 602
+                </div>
+                <a href="" class="info-text text-decoration-none">
+                    <i class="fa-solid fa-envelope me-1"></i> clarityfoster@gmail.com
+                </a>
+                <a href="" class="info-text text-decoration-none">
+                    <i class="bi bi-github me-1"></i> clarityfoster
+                </a>
+                <a href="" class="info-text text-decoration-none">
+                    <i class="bi bi-linkedin me-1"></i> clarityfoster
+                </a>
+            </div>
+        </div>
+    </div>
+    @include('admins/footer')
 @endsection
 <script>
     document.addEventListener('DOMContentLoaded', function() {
