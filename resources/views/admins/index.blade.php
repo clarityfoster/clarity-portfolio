@@ -144,7 +144,8 @@
     <div id="contact">
         <h3 class="contact-title">Get In Touch</h3>
         <div class="contact-body">
-            <form class="contact-form">
+            @include('share.alerts')
+            <form class="contact-form" method="POST" action="{{ route('sendMessage') }}">
                 @csrf
                 <div class="input-field mb-4">
                     <label for="name">Name</label>
@@ -212,3 +213,5 @@
         });
     });
 </script>
+
+

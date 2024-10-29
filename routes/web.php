@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [AdminController::class, 'index'])->name('index');
 Route::get('/admins/detail/{id}', [AdminController::class, 'detail'])->name('detail');
+
+Route::post('/contact', [ContactController::class, 'sendMessage'])->name('sendMessage');
 
 Auth::routes();
 
