@@ -136,6 +136,26 @@ class DatabaseSeeder extends Seeder
                     'body' => 'Adding contact form to give feedback from customers.',
                     'project_id' => 3,
                 ],
+                [
+                    'title' => 'Header:',
+                    'body' => 'Logo: Top left, with your app\'s name, navigation Menu that Links to each categories.',
+                    'project_id' => 4,
+                ],
+                [
+                    'title' => 'Featured Carousel:',
+                    'body' => 'Large, scrollable carousel displaying trending or new releases.',
+                    'project_id' => 4,
+                ],
+                [
+                    'title' => 'Watchlist Preview:',
+                    'body' => 'Displays movies the user has saved.',
+                    'project_id' => 4,
+                ],
+                [
+                    'title' => 'Preminum Features:',
+                    'body' => 'Also added premium features to avoid ads, and watch all kind of films.',
+                    'project_id' => 4,
+                ],
             ],
             [
                 [
@@ -186,6 +206,7 @@ class DatabaseSeeder extends Seeder
                 'project_img' => 'blog.png',
                 'video_url' => 'https://www.youtube.com/embed/ylInsbXwSGg',
                 'github_url' => 'https://github.com/clarityfoster/blog',
+                'ui_image' => NULL,
             ],
             [
                 'name' => 'Quiz Game',
@@ -196,6 +217,7 @@ class DatabaseSeeder extends Seeder
                 'project_img' => 'quiz.png',
                 'video_url' => 'https://www.youtube.com/embed/E6NuFvJbRfk',
                 'github_url' => 'https://github.com/clarityfoster/quiz-game',
+                'ui_image' => NULL,
             ],
             [
                 'name' => 'Food House',
@@ -205,11 +227,66 @@ class DatabaseSeeder extends Seeder
                 'category_id' => '1',
                 'project_img' => 'foodhouse.png',
                 'video_url' => 'https://www.youtube.com/embed/_rUO0zxb-94',
-                'github_url' => '',
+                'github_url' => NULL,
+                'ui_image' => NULL,
+            ],
+            [
+                'name' => 'Movie App',
+                'body' => 'Here\'s a template outline for a movie app, designed to highlight key sections like featured movies, genres, and user interaction. This layout keeps a smooth flow for exploring and discovering films.',
+                'feature_id' => '4',
+                'tech_id' => NULL,
+                'category_id' => '3',
+                'project_img' => 'moviePoster.png',
+                'video_url' => NULL,
+                'github_url' => NULL,
+                'ui_image' => [
+                    'movie1.png',
+                    'movie2.png',
+                    'movie3.png',
+                    'movie4.png',
+                    'movie5.png',
+                    'movie6.png',
+                    'movie7.png',
+                    'movie8.png',
+                    'movie9.png',
+                    'movie10.png',
+                    'movie11.png',
+                    'movie12.png',
+                    'movie13.png',
+                    'movie14.png',
+                    'movie15.png',
+                    'movie16.png',
+                    'movie17.png',
+                    'movie18.png',
+                    'movie19.png',
+                    'movie20.png',
+                    'movie21.png',
+                    'movie22.png',
+                    'movie23.png',
+                    'movie24.png',
+                    'movie25.png',
+                    'movie26.png',
+                    'movie27.png',
+                    'movie28.png',
+                    'movie29.png',
+                    'movie30.png',
+                    'movie31.png',
+                ],
             ],
         ];
-        foreach($projects as $list) {
-            $imgPath = Storage::disk('public')->putFile('img', new \Illuminate\Http\File(public_path('img/' . $list['project_img'])));
+        foreach ($projects as $list) {
+            $imgPath = null;
+            $uiPath = null;
+        
+            if ($list['project_img']) {
+                $imgPath = Storage::disk('public')->putFile('img', new \Illuminate\Http\File(public_path('img/' . $list['project_img'])));
+            }
+            if(!empty($list['ui_image'])) {
+                foreach($list['ui_image'] as $image) {
+                    $uiPath[] = Storage::disk('public')->putFile('img', new \Illuminate\Http\File(public_path('img/' . $image)));
+                }
+            }
+        
             \App\Models\Project::factory()->create([
                 'name' => $list['name'],
                 'body' => $list['body'],
@@ -219,8 +296,10 @@ class DatabaseSeeder extends Seeder
                 'category_id' => $list['category_id'],
                 'video_url' => $list['video_url'],
                 'project_img' => $imgPath,
+                'ui_image' => isset($uiPath) ? json_encode($uiPath) : null,
             ]);
         }
+        
 
         // Tech
         $tech = [

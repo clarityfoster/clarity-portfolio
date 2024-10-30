@@ -12,12 +12,11 @@
     justify-content: center;
 }
 .detail-card {
+    background-color: none;
     max-width: 1000px;
-    // background-color: $pale-brown-opacity;
     color: $main-color;
     border-radius: 20px;
     padding: 35px;
-    box-shadow: 2px 3px 4px #00000025;
 }
 .detail-body {
     font-size: 18px;
@@ -26,6 +25,7 @@
     font-size: 18px;
     font-weight: bold;
 }
+
 @media(max-width: 769px) {
     .detail-body {
         font-size: 15px;
@@ -49,6 +49,53 @@
         height: 205px;
     }
 }
+@media(max-width: 426px) {
+    .detail-container1 {
+        flex-direction: column;
+        margin-top: 150px;
+        margin-bottom: 40px; 
+    }
+
+    .detail-card {
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: none;
+    }
+
+    .carousel-inner {
+        max-width: 100%;
+        background-color: transparent; 
+    }
+
+    .ui-image {
+        max-width: 100%;
+        height: auto; 
+        max-height: 300px;
+    }
+
+    .youtube {
+        width: 100%;
+        height: auto; 
+        max-height: 200px;
+    }
+
+    .detail-title {
+        font-size: 22px;
+    }
+
+    .detail-body {
+        font-size: 14px;
+    }
+
+    .feature-title {
+        font-size: 16px;
+    }
+
+    .tech {
+        margin: 0; 
+    }
+}
+
 @media(max-width: 407px) {
     .detail-card {
         padding: 25px;
