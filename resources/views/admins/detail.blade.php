@@ -2,7 +2,7 @@
 @section('content')
 <div class="detail-container1">
     @include('nav.nav')
-        <div class="detail-card d-flex flex-column align-items-center">
+        <div class="detail-card bg-secondary text-white d-flex flex-column align-items-center">
             <iframe class="youtube rounded-3" 
                 width="640" height="335" 
                 src="{{ $project->video_url }}" 

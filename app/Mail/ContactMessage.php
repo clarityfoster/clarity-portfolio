@@ -29,7 +29,7 @@ class ContactMessage extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Message',
+            subject: 'New Message from your Portfolio',
             from: new Address($this->detail['email'], $this->detail['name'])
         );
     }

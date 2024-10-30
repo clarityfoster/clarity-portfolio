@@ -117,48 +117,52 @@
     <div class="prjs" id="projects">
         <div class="cat-div">
             @foreach ($category as $cat)
-                <a href="#" class="cat-title">{{ $cat->name }}</a>
+                <a href="#" class="cat-title" data-category={{ $cat->id }}>{{ $cat->name }}</a>
             @endforeach
         </div>
-        <div class="prj-container">
-            @foreach ($project as $prj)
-                <div class="prj">
-                    <img class="prj-img" src="{{ asset('storage/' . $prj->project_img) }}" alt="{{ $prj->name }}">
-                    <div class="prj-content">
-                        <h4 class="prj-name">{{ $prj->name }}</h4>
-                        <p class="prj-body">{{ $prj->body }}</p>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center g-3">
+                @foreach ($project as $prj)
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="prj rounded-4 p-4 shadow bg-secondary"
+                            style="max-width: 450px; height: auto; overflow: hidden;"
+                            data-category="{{ $prj->category_id }}">
+                            <img class="card-img-top mb-2 rounded-3" src="{{ asset('storage/' . $prj->project_img) }}"
+                                alt="{{ $prj->name }}">
+                            <div class="card-body text-center text-md-start text-white">
+                                <b class="fs-4">{{ $prj->name }}</b>
+                                <p class="prj-body mt-1">{{ $prj->body }}</p>
+                                <div class="text-center text-md-end">
+                                    <a href="{{ route('detail', ['id' => $prj->id]) }}"
+                                        class="text-decoration-none text-light text-end">
+                                        See more <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="prj-btn">
-                        <a href="{{ $prj->github_url }}" class="card-link text-decoration-none main-brown">
-                            <i class="bi bi-github me-1"></i> Source code
-                        </a>
-                        <a href="{{ route('detail', ['id' => $prj->id]) }}"
-                            class="card-link text-decoration-none main-brown">
-                            See More <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
     <div id="contact">
         <h3 class="contact-title">Get In Touch</h3>
         <div class="contact-body">
-            @include('share.alerts')
             <form class="contact-form" method="POST" action="{{ route('sendMessage') }}">
+                @include('share.alerts')
                 @csrf
                 <div class="input-field mb-4">
                     <label for="name">Name</label>
                     <input type="text" class="name" name="name" required>
-                </div>   
+                </div>
                 <div class="input-field mb-4">
                     <label for="email">Email</label>
                     <input type="text" class="name" name="email" required>
-                </div> 
+                </div>
                 <div class="input-field mb-4">
                     <label for="message">Message</label>
                     <textarea name="message" class="name" required></textarea>
-                </div> 
+                </div>
                 <button type="submit" class="form-submit">
                     Send Message <i class="fa-solid fa-paper-plane text-white ms-2"></i>
                 </button>
@@ -205,13 +209,49 @@
             }
         });
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 550) { 
+            if (window.scrollY > 550) {
                 topBtn.classList.add('topActive')
             } else {
                 topBtn.classList.remove('topActive')
             }
         });
+        const categoryLinks = document.querySelectorAll('.cat-title');
+        const projects = document.querySelectorAll('.prj'); 
+        const defaultCategoryId = "2"; 
+
+        projects.forEach(function(project) {
+            if(project.getAttribute('data-category') === defaultCategoryId) {
+                project.parentNode.style.display = "block";
+            } else {
+                project.parentNode.style.display = "none";
+            }
+        })
+
+
+        categoryLinks.forEach(function(links) {
+            if(links.getAttribute('data-category') === defaultCategoryId) {
+                links.classList.add('active-category');
+            }
+        })
+
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const categoryId = this.getAttribute('data-category');
+
+                categoryLinks.forEach(function(link) {
+                    link.classList.remove('active-category')
+                })
+                this.classList.add('active-category');
+                
+                projects.forEach(function(project) {
+                    if (project.getAttribute('data-category') === categoryId) {
+                        project.parentNode.style.display = 'block';
+                    } else {
+                        project.parentNode.style.display = 'none';
+                    }
+                });
+            });
+        });
     });
 </script>
-
-

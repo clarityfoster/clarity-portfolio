@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Some Projects
         $list = [
             [
                 'name' => 'Blog',
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
             ]
             );
         }
+        // Abilities
         $list = [
             [
                 'title' => 'Frontend development as your needs',
@@ -72,12 +74,16 @@ class DatabaseSeeder extends Seeder
                 'class' => $item['class'],
             ]);
         }
+
+        // Categories
         $list = [
             'Frontend', 'Backend', 'UI/UX',
         ];
         foreach($list as $list) {
             \App\Models\Category::factory()->create(['name' => $list]);
         }
+
+        // Features
         $list = [
             [
                 [
@@ -104,6 +110,31 @@ class DatabaseSeeder extends Seeder
                     'title' => 'Admin Dashboard:',
                     'body' => 'Admins can change the roles like managers and users. Users can be banned by admins and managers.',
                     'project_id' => 1,
+                ],
+                [
+                    'title' => 'Homepage:',
+                    'body' => 'Navigation Bar linking to different sections and it\'s displaying the most popular items.',
+                    'project_id' => 3,
+                ],
+                [
+                    'title' => 'Hot Items:',
+                    'body' => 'It\'s displaying hot items among the customers.',
+                    'project_id' => 3,
+                ],
+                [
+                    'title' => 'Foods List:',
+                    'body' => 'Showing all of the food items that can be ordered from this shop.',
+                    'project_id' => 3,
+                ],
+                [
+                    'title' => 'Delievery System:',
+                    'body' => 'Displaying how to deliever and explain the delievery\'s fees.',
+                    'project_id' => 3,
+                ],
+                [
+                    'title' => 'Contact Page:',
+                    'body' => 'Adding contact form to give feedback from customers.',
+                    'project_id' => 3,
                 ],
             ],
             [
@@ -143,7 +174,9 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
         }
-        $list = [
+
+        // Main Project
+        $projects = [
             [
                 'name' => 'Blog',
                 'body' => 'A simple blog application built with Laravel, showcasing the use of the framework to create a basic blogging platform. This project includes essential features like user authentication, post creation, and commenting functionality.',
@@ -164,8 +197,18 @@ class DatabaseSeeder extends Seeder
                 'video_url' => 'https://www.youtube.com/embed/E6NuFvJbRfk',
                 'github_url' => 'https://github.com/clarityfoster/quiz-game',
             ],
+            [
+                'name' => 'Food House',
+                'body' => 'This is a beautifully crafted front-end food website designed to offer a delightful experience for food lovers. With its visually appealing layout and intuitive navigation.',
+                'feature_id' => '3',
+                'tech_id' => '3',
+                'category_id' => '1',
+                'project_img' => 'foodhouse.png',
+                'video_url' => 'https://www.youtube.com/embed/_rUO0zxb-94',
+                'github_url' => '',
+            ],
         ];
-        foreach($list as $list) {
+        foreach($projects as $list) {
             $imgPath = Storage::disk('public')->putFile('img', new \Illuminate\Http\File(public_path('img/' . $list['project_img'])));
             \App\Models\Project::factory()->create([
                 'name' => $list['name'],
@@ -178,6 +221,8 @@ class DatabaseSeeder extends Seeder
                 'project_img' => $imgPath,
             ]);
         }
+
+        // Tech
         $tech = [
             ['name' => 'Laravel', 'project_id' => 1],
             ['name' => 'Laravel', 'project_id' => 2],
@@ -188,6 +233,9 @@ class DatabaseSeeder extends Seeder
             ['name' => 'SCSS', 'project_id' => 2],
             ['name' => 'Bootstrap', 'project_id' => 1],
             ['name' => 'Bootstrap', 'project_id' => 2],
+            ['name' => 'HTML', 'project_id' => 3],
+            ['name' => 'CSS', 'project_id' => 3],
+            ['name' => 'Javascript', 'project_id' => 3],
         ];
         foreach ($tech as $item) {
             \App\Models\Tech::factory()->create([
