@@ -27,8 +27,11 @@
 }
 
 @media(max-width: 769px) {
+    .detail-title {
+        font-size: 25px;
+    }
     .detail-body {
-        font-size: 15px;
+        font-size: 16px;
     }
     .feature-title {
         font-size: 15px;
@@ -77,14 +80,6 @@
         width: 100%;
         height: auto; 
         max-height: 200px;
-    }
-
-    .detail-title {
-        font-size: 22px;
-    }
-
-    .detail-body {
-        font-size: 14px;
     }
 
     .feature-title {

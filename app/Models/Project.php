@@ -18,4 +18,7 @@ class Project extends Model
     public function tech() {
         return $this->hasMany('App\Models\Tech');
     }
+    public function card() {
+        return $this->belongsTo('App\Models\Card');
+    }
 }

@@ -239,6 +239,7 @@ class DatabaseSeeder extends Seeder
         $projects = [
             [
                 'name' => 'Blog',
+                'pre_body' => 'A simple blog application built with Laravel, showcasing the use of the framework to create a basic blogging platform.',
                 'body' => 'A simple blog application built with Laravel, showcasing the use of the framework to create a basic blogging platform. This project includes essential features like user authentication, post creation, and commenting functionality.',
                 'feature_id' => 1,
                 'tech_id' => 1,
@@ -250,6 +251,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Quiz Game',
+                'pre_body' => 'This is a web-based quiz game built using Laravel. The app allows users to participate in various quizzes.',
                 'body' => 'This is a web-based quiz game built using Laravel. The app allows users to participate in various quizzes, test their knowledge, and view their scores. It features user authentication, quiz and users management, and leaderboard.',
                 'feature_id' => 2,
                 'tech_id' => 2,
@@ -261,6 +263,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Food House',
+                'pre_body' => 'This is a beautifully crafted front-end food website designed to offer a delightful experience for food lovers',
                 'body' => 'This is a beautifully crafted front-end food website designed to offer a delightful experience for food lovers. With its visually appealing layout and intuitive navigation.',
                 'feature_id' => '3',
                 'tech_id' => '3',
@@ -272,6 +275,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Movie App',
+                'pre_body' => 'Here\'s a template outline for a movie app, designed to highlight key sections like featured movies, etc.',
                 'body' => 'Here\'s a template outline for a movie app, designed to highlight key sections like featured movies, genres, and user interaction. This layout keeps a smooth flow for exploring and discovering films.',
                 'feature_id' => '4',
                 'tech_id' => NULL,
@@ -315,6 +319,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name' => 'Clothing Website',
+                'pre_body' => 'Here\'s a template outline for a clothing website, designed to highlight key sections.',
                 'body' => 'Here\'s a template outline for a clothing website, designed to highlight key sections. This layout keeps a smooth flow for exploring and discovering different kind of clothings.',
                 'feature_id' => '5',
                 'tech_id' => NULL,
@@ -368,6 +373,7 @@ class DatabaseSeeder extends Seeder
         
             \App\Models\Project::factory()->create([
                 'name' => $list['name'],
+                'pre_body' => $list['pre_body'],
                 'body' => $list['body'],
                 'feature_id' => $list['feature_id'],
                 'tech_id' => $list['tech_id'],
@@ -398,6 +404,66 @@ class DatabaseSeeder extends Seeder
             \App\Models\Tech::factory()->create([
                 'name' => $item['name'],
                 'project_id' => $item['project_id'],
+            ]);
+        }
+
+        // Essence
+        $essence = [
+            [
+                'essence_img' => 'coding.svg',
+                'title' => 'Who am I?',
+                'subtitle' => 'Let me introduce you',
+                'body' => 'I am a motivated junior web developer with a solid foundation
+                                    in Laravel. I have experience building web applications, web
+                                    design, and managing databases. I focus on writing clean,
+                                    maintainable code.',
+                'cv_path' => 'cv/CMM_CV.pdf',
+            ],
+            [
+                'essence_img' => 'UI:UX.svg',
+                'title' => 'Web Design',
+                'subtitle' => 'Please check how I can work!',
+                'body' => 'I have experience in both web design and development, so I can create websites that are both visually appealing and functional. I can able to handle both the technical and creative sides of web development.',
+                'cv_path' => 'cv/CMM_CV.pdf',
+            ],
+            [
+                'essence_img' => 'creative.svg',
+                'title' => 'Critical thinking',
+                'subtitle' => 'Please check how I can work!',
+                'body' => 'I also have strong critical thinking skills. This means I can analyze problems and find effective solutions. I enjoy thinking deeply about different situations and making decisions based on careful consideration. My critical thinking helps me in both web design and development.',
+                'cv_path' => 'cv/CMM_CV.pdf',
+            ],
+        ];
+        foreach($essence as $item) {
+            $imgPath = Storage::disk('public')->putFile('img', new \Illuminate\Http\File(public_path('img/' . $item['essence_img'])));
+
+            \App\Models\Essence::factory()->create([
+                'title' => $item['title'],
+                'subtitle' => $item['subtitle'],
+                'body' => $item['body'],
+                'cv_path' => $item['cv_path'],
+                'essence_img' => $imgPath,
+            ]);
+        }
+
+        // Cards
+        $card = [
+           [
+            'icon_class' => 'bi bi-patch-check-fill fs-4',
+            'card_name' => 'Completed',
+            'essence_id' => 1,
+           ],
+           [
+            'icon_class' => 'bi bi-patch-check-fill fs-4',
+            'card_name' => 'Completed',
+            'essence_id' => 2,
+           ],
+        ];
+        foreach($card as $cards) {
+            \App\Models\Card::factory()->create([
+                'icon_class' => $cards['icon_class'],
+                'card_name' => $cards['card_name'],
+                'essence_id' => $cards['essence_id'],
             ]);
         }
     }

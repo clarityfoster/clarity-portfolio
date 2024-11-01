@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
 .essence-container {
     max-width: 85%;
     margin: 0 auto;
@@ -105,5 +106,11 @@
     }
     .essence-img {
         max-width: 400px;
+    }
+}
+@media(max-width: 426px) {
+    .essence-page {
+        margin-top: 100px;
+        margin-bottom: 30px;
     }
 }

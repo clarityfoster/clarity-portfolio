@@ -131,8 +131,8 @@
                                 alt="{{ $prj->name }}">
                             <div class="card-body text-center text-md-start text-white">
                                 <b class="prj-title fs-4 main-brown">{{ $prj->name }}</b>
-                                <p class="prj-body mt-1 main-color">{{ $prj->body }}</p>
-                                <div class="text-center text-md-end">
+                                <p class="prj-body mt-1 main-color">{{ $prj->pre_body }}</p>
+                                <div class="text-center text-md-end mt-2">
                                     <a href="{{ route('detail', ['id' => $prj->id]) }}"
                                         class="prj-seeMore text-decoration-none text-end main-color">
                                         See more <i class="bi bi-arrow-right"></i>
@@ -226,7 +226,6 @@
                 project.parentNode.style.display = "none";
             }
         })
-
 
         categoryLinks.forEach(function(links) {
             if(links.getAttribute('data-category') === defaultCategoryId) {

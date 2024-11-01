@@ -10,9 +10,9 @@
             <a href="{{ route('index') }}#contact">Contact</a>
         </div>
         <div class="footer-social">
-            <a href="#" ><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" ><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
         </div>
     </div>
     <div class="footer-bottom">

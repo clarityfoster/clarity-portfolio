@@ -8,7 +8,8 @@ use App\Models\Category;
 use App\Models\Feature;
 use App\Models\Project;
 use App\Models\Tech;
-
+use App\Models\Essence;
+use App\Models\Card;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -38,6 +39,16 @@ class AdminController extends Controller
         ]);
     }
     public function essence() {
-        return view('admins.essence');
+        $essence = Essence::all();
+        $card = Card::all();
+        $project = Project::all();
+        $ui = Project::where('category_id', 3)->get();
+        $category = Category::all();
+        return view('admins.essence', [
+            'essence' => $essence,
+            'card' => $card,
+            'project' => $project,
+            'ui' => $ui,
+        ]);
     }
 }
