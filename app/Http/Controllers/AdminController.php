@@ -37,5 +37,7 @@ class AdminController extends Controller
             'category' => $category
         ]);
     }
-    
+    public function essence() {
+        return view('admins.essence');
+    }
 }

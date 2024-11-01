@@ -1,10 +1,11 @@
 @php
     $detailPage = Request::routeIs('detail');
+    $essencePage = Request::routeIs('essence');
 @endphp
-<nav class="nav-bar {{ $detailPage ? 'full' : '' }}">
+<nav class="nav-bar {{ $detailPage || $essencePage ? 'full' : '' }}">
     <a class="logo" href="{{ route('index') }}">Clarity</a>
     <div class="nav-menu">
-        <a class="nav-items essence-nav" href="">
+        <a class="nav-items essence-nav" href="{{ route('essence') }}">
             <li>
                 <span class="nav-icon"><i class="fa-solid fa-user-tie me-2"></i></span>
                 Essence

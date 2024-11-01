@@ -36,7 +36,7 @@
                     <a href="" id="seeMore" class="seeMore text-secondary text-decoration-none small">See
                         Less</a>
                 </p>
-                <a href="" class="scroll-down">
+                <a href="{{ route('index') }}#abilities" class="scroll-down">
                     <i class="bi bi-mouse fs-2"></i>
                     <span>Scroll down</span>
                     <i class="bi bi-arrow-down"></i>
@@ -67,7 +67,7 @@
             <button class="lucky">
                 <i class="fa-solid fa-paw"></i>
             </button>
-            <button class="essence">My Essence</button>
+            <a href="{{ route('essence') }}" class="essence">My Essence</a>
             <div class="cm-gp">
                 <button class="telegram">
                     <i class="bi bi-telegram"></i>
@@ -124,17 +124,17 @@
             <div class="row d-flex align-items-center justify-content-center g-3">
                 @foreach ($project as $prj)
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="prj rounded-4 p-4 shadow bg-secondary"
+                        <div class="prj rounded-4 p-4 shadow pale-brown-bg"
                             style="max-width: 450px; height: auto; overflow: hidden;"
                             data-category="{{ $prj->category_id }}">
-                            <img class="card-img-top mb-2 rounded-3" src="{{ asset('storage/' . $prj->project_img) }}"
+                            <img class="img-thumbnail card-img-top mb-2 rounded-3" src="{{ asset('storage/' . $prj->project_img) }}"
                                 alt="{{ $prj->name }}">
                             <div class="card-body text-center text-md-start text-white">
-                                <b class="fs-4">{{ $prj->name }}</b>
-                                <p class="prj-body mt-1">{{ $prj->body }}</p>
+                                <b class="prj-title fs-4 main-brown">{{ $prj->name }}</b>
+                                <p class="prj-body mt-1 main-color">{{ $prj->body }}</p>
                                 <div class="text-center text-md-end">
                                     <a href="{{ route('detail', ['id' => $prj->id]) }}"
-                                        class="text-decoration-none text-light text-end">
+                                        class="prj-seeMore text-decoration-none text-end main-color">
                                         See more <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
@@ -175,7 +175,7 @@
                     <i class="bi bi-telephone-fill me-1"></i> 09 458 923 602
                 </div>
                 <a href="" class="info-text text-decoration-none">
-                    <i class="fa-solid fa-envelope"></i> clarityfoster@gmail.com
+                    <i class="fa-solid fa-envelope me-1"></i> clarityfoster23@gmail.com
                 </a>
                 <a href="https://github.com/clarityfoster" class="info-text text-decoration-none">
                     <i class="bi bi-github me-1"></i> clarityfoster

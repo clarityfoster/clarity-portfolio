@@ -23,7 +23,6 @@ body {
     margin: 0 auto;
 }
 .home-content {
-    // margin-top: 90px;
     margin-top: 150px;
     margin-bottom: 140px;
 }
@@ -170,6 +169,12 @@ body {
 }
 .lucky, .essence {
     position: absolute;
+}
+.essence {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 .lucky {
     top: 40px;

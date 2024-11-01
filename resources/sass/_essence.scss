@@ -1,0 +1,109 @@
+.essence-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.essence-container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+.essence-content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    max-width: 550px;
+}
+.essence-title {
+    font-weight: bold;
+    font-size: 55px;
+    text-transform: uppercase;
+    color: $main-color;
+}
+.essence-subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $main-brown;
+    font-size: 25px;
+}
+.essence-body {
+    font-size: 20px;
+    color: $main-color;
+    text-align: end;
+    margin-top: 20px;
+}
+.download-cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 65px;
+    background-color: $main-brown;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: ease-in .3s;
+}
+.download-cv:hover {
+    background-color: $main-color;
+}
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.essence-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #d8d8d8;
+    justify-content: center;
+    color: $main-color;
+    gap: 2px;
+}
+.essence-img {
+    max-width: 600px;
+}
+@media(max-width: 1301px) {
+    .essence-content {
+        max-width: 500px;
+    }
+    .essence-title {
+        font-size: 40px;
+    }
+    .essence-subtitle {
+        font-size: 20px;
+    }
+    .essence-body {
+        font-size: 17px;
+        margin-top: 20px;
+    }
+    .download-cv {
+        width: 200px;
+        height: 65px;
+        font-size: 20px;
+    }
+    .essence-img {
+        max-width: 480px;
+    }
+}
+@media(max-width: 974px) {
+    .essence-page {
+        height: auto;
+        flex-direction: column;
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .essence-content {
+        align-items: center;
+    }
+    .essence-body {
+        text-align: center;
+    }
+    .essence-img {
+        max-width: 400px;
+    }
+}
