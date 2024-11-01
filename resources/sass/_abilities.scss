@@ -28,7 +28,7 @@
 }
 .abCard {
     top: -20%;
-    left: -80%;
+    left: -73%;
 }
 .abCard1 {
     top: -20%;
@@ -36,7 +36,7 @@
 }
 .abCard2 {
     bottom: -20%;
-    left: -80%;
+    left: -73%;
 }
 .abCard3 {
     bottom: -20%;
@@ -327,8 +327,15 @@
         transform: translateX(-50%);
     }
 }
+@media(max-width: 426px) {
+    .abilities {
+        display: none !important;
+    }
+}
 @media(max-width: 321px) {
     .abilities {
+        display: none;
+        background-color: red;
         margin-bottom: 20px;
 }
     .abCard, .abCard1, .abCard2, .abCard3 {

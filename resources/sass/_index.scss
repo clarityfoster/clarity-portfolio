@@ -24,7 +24,7 @@ body {
 }
 .home-content {
     margin-top: 150px;
-    margin-bottom: 140px;
+    margin-bottom: 70px;
 }
 .home-title {
     color: $main-color;
@@ -557,6 +557,9 @@ body {
     }
 }
 @media(max-width: 425px) {
+    .main-div {
+        height: 100vh;
+    }
     #fullBody {
         display: none;
     }

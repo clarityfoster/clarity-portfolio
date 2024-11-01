@@ -69,12 +69,12 @@
             </button>
             <a href="{{ route('essence') }}" class="essence">My Essence</a>
             <div class="cm-gp">
-                <button class="telegram">
+                <a href="https://t.me/clarity_foster" class="telegram">
                     <i class="bi bi-telegram"></i>
-                </button>
-                <button class="mail">
+                </a>
+                <a href="mailto:clarityfoster23@gmail.com" class="mail">
                     <i class="bi bi-envelope-fill"></i>
-                </button>
+                </a>
                 <span class="cm-text">Contact me here</span>
             </div>
             <div class="search-gp">
@@ -130,7 +130,7 @@
                             <img class="img-thumbnail card-img-top mb-2 rounded-3" src="{{ asset('storage/' . $prj->project_img) }}"
                                 alt="{{ $prj->name }}">
                             <div class="card-body text-center text-md-start text-white">
-                                <b class="prj-title fs-4 main-brown">{{ $prj->name }}</b>
+                                <b class="prj-title main-brown">{{ $prj->name }}</b>
                                 <p class="prj-body mt-1 main-color">{{ $prj->pre_body }}</p>
                                 <div class="text-center text-md-end mt-2">
                                     <a href="{{ route('detail', ['id' => $prj->id]) }}"
@@ -174,14 +174,17 @@
                 <div class="info-text">
                     <i class="bi bi-telephone-fill me-1"></i> 09 458 923 602
                 </div>
-                <a href="" class="info-text text-decoration-none">
+                <a href="mailto:clarityfoster23@gmail.com" class="info-text text-decoration-none">
                     <i class="fa-solid fa-envelope me-1"></i> clarityfoster23@gmail.com
                 </a>
+                <a href="https://t.me/clarity_foster" class="info-text text-decoration-none">
+                    <i class="bi bi-telegram me-1"></i> @clarity_foster
+                </a>
                 <a href="https://github.com/clarityfoster" class="info-text text-decoration-none">
-                    <i class="bi bi-github me-1"></i> clarityfoster
+                    <i class="bi bi-github me-1"></i> @clarityfoster
                 </a>
                 <a href="" class="info-text text-decoration-none">
-                    <i class="bi bi-linkedin me-1"></i> clarityfoster
+                    <i class="bi bi-linkedin me-1"></i> @clarityfoster
                 </a>
             </div>
         </div>
