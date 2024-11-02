@@ -5,7 +5,7 @@
         </div>
         <div class="footer-links">
             <a href="{{ route('index') }}#home">Home</a>
-            <a href="{{ route('index') }}#abilities">Abilities</a>
+            <a id="ability" href="{{ route('index') }}#abilities">Abilities</a>
             <a href="{{ route('index') }}#projects">Projects</a>
             <a href="{{ route('index') }}#contact">Contact</a>
         </div>

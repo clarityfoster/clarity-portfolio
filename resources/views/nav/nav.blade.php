@@ -11,7 +11,7 @@
                 Essence
             </li>
         </a>
-        <a class="nav-items" href="{{ route('index') }}#abilities">
+        <a class="nav-items" href="{{ route('index') }}#abilities" id="ability" >
             <li>
                 <span class="nav-icon"><i class="fa-solid fa-lightbulb me-2"></i></i></span>
                 Abilities

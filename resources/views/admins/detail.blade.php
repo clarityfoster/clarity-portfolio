@@ -2,16 +2,16 @@
 @section('content')
     <div class="detail-container1">
         @include('nav.nav')
-        <div class="detail-card pale-brown-bg main-color shadow d-flex flex-column align-items-center">
+        <div class="detail-card main-color d-flex flex-column align-items-center">
             @php
                 $images = json_decode($project->ui_image, true);
-                $maxWidth = "450px";
-                if(is_array($images) && count($images) > 0) {
+                $maxWidth = '450px';
+                if (is_array($images) && count($images) > 0) {
                     $imagePath = storage_path('app/public/' . $images[0]);
-                    if(file_exists($imagePath)) {
+                    if (file_exists($imagePath)) {
                         [$width] = getimageSize($imagePath);
-                        if($width > 1000) {
-                            $maxWidth = "1000px";
+                        if ($width > 1000) {
+                            $maxWidth = '1000px';
                         }
                     }
                 }
@@ -52,12 +52,16 @@
                 <p class="detail-body mb-4">{{ $project->body }}</p>
                 <h3 class="df-title">Features</h3>
                 <hr>
-                @foreach ($project->feature as $feature)
-                    <ul class="mb-4">
-                        <h3 class="feature-title">{{ $feature->title }}</h3>
-                        <li class="detail-body">{{ $feature->body }}</li>
-                    </ul>
-                @endforeach
+                <ul class="features-list mb-4">
+                    @foreach ($project->feature as $feature)
+                        <li>
+                            <h4 class="feature-title">{{ $feature->title }}</h4>
+                            <ul class="feature-body-list">
+                                <li class="detail-body">{{ $feature->body }}</li>
+                            </ul>
+                        </li>
+                    @endforeach
+                </ul>
                 @if ($project->tech_id)
                     <h4 class="df-title mt-3">Technologies Used</h4>
                     <hr>
@@ -70,7 +74,7 @@
                 @if ($project->github_url)
                     <h4 class="df-title mt-3">Source Code</h4>
                     <hr>
-                    <a href="{{ $project->github_url }}" class="btn btn-secondary">
+                    <a href="{{ $project->github_url }}" class="btn text-light bg-main-brown">
                         <i class="bi bi-github me-2"></i> Get on GitHub
                     </a>
                 @endif

@@ -71,7 +71,7 @@
         justify-content: center;
     }
     .prj {
-        min-width: 275px;
+        min-width: 320px;
     }
     .cat-div {
         gap: 13px;
@@ -81,5 +81,10 @@
     }
     .prj-seeMore {
         font-size: 14px;
+    }
+}
+@media(max-width: 376px) {
+    .prj {
+        min-width: 280px;
     }
 }
