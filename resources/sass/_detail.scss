@@ -75,49 +75,42 @@
 }
 @media(max-width: 426px) {
     .detail-container1 {
+        width: 90%;
         flex-direction: column;
         margin-top: 150px;
         margin-bottom: 40px; 
     }
-
     .detail-card {
         padding: 20px;
         border-radius: 15px;
         box-shadow: none;
     }
-
     .carousel-inner {
         max-width: 100%;
         background-color: transparent; 
     }
-
     .ui-image {
         max-width: 100%;
         height: auto; 
         max-height: 300px;
     }
-
     .youtube {
         width: 100%;
-        height: auto; 
+        height: 165px; 
         max-height: 200px;
     }
-
     .feature-title {
         font-size: 16px;
     }
-
     .tech {
         margin: 0; 
     }
 }
-
 @media(max-width: 407px) {
     .detail-card {
         padding: 25px;
     }
     .youtube {
-        width: 250px;
-        height: 150px;
+        height: auto;
     }
 }
