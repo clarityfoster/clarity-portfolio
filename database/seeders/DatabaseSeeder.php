@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
                 'github_url' => 'https://github.com/clarityfoster/blog',
             ],
             [
-                'name' => 'Null',
-                'language' => 'Null',
+                'name' => 'NULL',
+                'language' => 'NULL',
                 'github_url' => '',
             ],
         ];
@@ -45,34 +45,25 @@ class DatabaseSeeder extends Seeder
         $list = [
             [
                 'title' => 'Frontend development as your needs',
-                'body' => 'Save your favorite articles to read offline, sync your reading lists     across devices and customize your
-                    reading experience with the official Wikipedia app across devices and customize your reading.',
-                'class' => 'abCard',
+                'body' => 'Proficient in HTML, CSS, and JavaScript, with experience in Bootstrap and Sass for building responsive, high-performing interfaces. Focused on delivering smooth and consistent user experiences across devices.',
             ],
             [
-                'title' => 'Frontend development as your needs',
-                'body' => 'Save your favorite articles to read offline, sync your reading lists     across devices and customize your
-                    reading experience with the official Wikipedia app across devices and customize your reading.',
-                'class' => 'abCard1',
+                'title' => 'Backend development as your needs',
+                'body' => 'Skilled in server-side technologies like PHP, with strong knowledge in database management. Emphasizes secure, efficient application logic and reliable data handling.',
             ],
             [
-                'title' => 'Frontend development as your needs',
-                'body' => 'Save your favorite articles to read offline, sync your reading lists     across devices and customize your
-                    reading experience with the official Wikipedia app across devices and customize your reading.',
-                'class' => 'abCard2',
+                'title' => 'UI designs as your needs',
+                'body' => 'Adept at crafting intuitive, visually appealing interfaces using Figma and Adobe XD. Prioritizes responsive layouts, cohesive design, and usability, ensuring interfaces look great on all screens.',
             ],
             [
-                'title' => 'Frontend development as your needs',
-                'body' => 'Save your favorite articles to read offline, sync your reading lists     across devices and customize your
-                    reading experience with the official Wikipedia app across devices and customize your reading.',
-                'class' => 'abCard3',
+                'title' => 'Database Management',
+                'body' => 'Experienced in SQL and NoSQL databases, with skills in organizing and querying data efficiently. Emphasizes data security and performance optimization to support reliable application functionality.',
             ]
         ];
         foreach($list as $item) {
             \App\Models\Ability::factory()->create([
                 'title' => $item['title'],
                 'body' => $item['body'],
-                'class' => $item['class'],
             ]);
         }
 

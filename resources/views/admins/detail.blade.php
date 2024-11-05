@@ -55,10 +55,8 @@
                 <ul class="features-list mb-4">
                     @foreach ($project->feature as $feature)
                         <li>
-                            <h4 class="feature-title">{{ $feature->title }}</h4>
-                            <ul class="feature-body-list">
-                                <li class="detail-body">{{ $feature->body }}</li>
-                            </ul>
+                            <h4 class="feature-title">{{ $feature->title }}</h4> 
+                            <p>{{ $feature->body }}</p>
                         </li>
                     @endforeach
                 </ul>

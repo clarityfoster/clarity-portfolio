@@ -11,7 +11,7 @@
                 Essence
             </li>
         </a>
-        <a class="nav-items" href="{{ route('index') }}#abilities" id="ability" >
+        <a class="nav-items" href="{{ route('index') }}#abilities" id="ability">
             <li>
                 <span class="nav-icon"><i class="fa-solid fa-lightbulb me-2"></i></i></span>
                 Abilities
@@ -36,14 +36,13 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navItems = document.querySelectorAll('.nav-items');
+        const toggle = document.getElementById('toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navItems = document.querySelectorAll('.nav-items');
 
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault();
-        navMenu.classList.toggle('active');
+        toggle.addEventListener('click', function(event) {
+            event.preventDefault();
+            navMenu.classList.toggle('active');
+        });
     });
-});
-
 </script>

@@ -88,30 +88,21 @@
             </div>
         </div>
     </div>
-    <div id="abilities" class="abilities d-flex align-items-center justify-content-center">
-        <div class="dark-muted d-flex align-items-center justify-content-center position-relative">
-            <div class="dark-muted1 d-flex align-items-center justify-content-center">
-                <div class="dark-muted2 d-flex align-items-center justify-content-center">
-                    <div class="dark-muted2 d-flex align-items-center justify-content-center">
-                        <h1 class="abilities-text text-uppercase main-brown">Abilities</h1>
+    <div id="abilities">
+        <div class="ability-container">
+            @foreach ($ability as $item)
+                <div class="ability-card">
+                    <div class="ability-card-head d-flex justify-content-between align-items-start">
+                        <h5 class="ability-card-title text-uppercase main-brown">
+                            {{ $item->title }}
+                        </h5>
+                        <span class="ability-card-index">{{ $item->id }}</span>
                     </div>
+                    <p class="ability-card-body">
+                        {{ $item->body }}
+                    </p>
                 </div>
-            </div>
-            <div class="card-container">
-                @foreach ($ability as $item)
-                    <div class="{{ $item->class }}">
-                        <div class="abCard-title d-flex justify-content-between align-items-start">
-                            <h5 class="card-title1 text-uppercase main-brown">
-                                {{ $item->title }}
-                            </h5>
-                            <span class="abCard-index">{{ $item->id }}</span>
-                        </div>
-                        <p class="abCard-text">
-                            {{ $item->body }}
-                        </p>
-                    </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="prjs" id="projects">
@@ -127,8 +118,8 @@
                         <div class="prj rounded-4 p-4 shadow pale-brown-bg"
                             style="max-width: 450px; height: auto; overflow: hidden;"
                             data-category="{{ $prj->category_id }}">
-                            <img class="img-thumbnail card-img-top mb-2 rounded-3" src="{{ asset('storage/' . $prj->project_img) }}"
-                                alt="{{ $prj->name }}">
+                            <img class="img-thumbnail card-img-top mb-2 rounded-3"
+                                src="{{ asset('storage/' . $prj->project_img) }}" alt="{{ $prj->name }}">
                             <div class="card-body text-center text-md-start text-white">
                                 <b class="prj-title main-brown">{{ $prj->name }}</b>
                                 <p class="prj-body mt-1 main-color">{{ $prj->pre_body }}</p>
@@ -219,11 +210,11 @@
             }
         });
         const categoryLinks = document.querySelectorAll('.cat-title');
-        const projects = document.querySelectorAll('.prj'); 
-        const defaultCategoryId = "2"; 
+        const projects = document.querySelectorAll('.prj');
+        const defaultCategoryId = "2";
 
         projects.forEach(function(project) {
-            if(project.getAttribute('data-category') === defaultCategoryId) {
+            if (project.getAttribute('data-category') === defaultCategoryId) {
                 project.parentNode.style.display = "block";
             } else {
                 project.parentNode.style.display = "none";
@@ -231,7 +222,7 @@
         })
 
         categoryLinks.forEach(function(links) {
-            if(links.getAttribute('data-category') === defaultCategoryId) {
+            if (links.getAttribute('data-category') === defaultCategoryId) {
                 links.classList.add('active-category');
             }
         })
@@ -245,7 +236,7 @@
                     link.classList.remove('active-category')
                 })
                 this.classList.add('active-category');
-                
+
                 projects.forEach(function(project) {
                     if (project.getAttribute('data-category') === categoryId) {
                         project.parentNode.style.display = 'block';

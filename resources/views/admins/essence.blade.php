@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     @include('nav.nav')
     <div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel">
